@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <title>Rossman Sales Prediction</title>
+   <!-- <link rel="stylesheet" href="../templates/css/style.css" /> -->
+   <link
+     rel="apple-touch-icon"
+     sizes="180x180"
+     href="{{ url_for('static',filename='images/apple-touch-icon.png') }}"
+   />
+   <link
+     rel="icon"
+     type="image/png"
+     sizes="32x32"
+     href="{{ url_for('static',filename='images/favicon-32x32.png') }}"
+   />
+   <link
+     rel="icon"
+     type="image/png"
+     sizes="16x16"
+     href="{{ url_for('static',filename='images/favicon-16x16.png') }}"
+   />
+   <!-- <link
+     rel="manifest"
+     href="{{ url_for('static',filename='images/site.webmanifest') }}"
+   /> -->
+   <link
+     rel="stylesheet"
+     type="text/css"
+     href="{{ url_for('static',filename='css/style.css') }}"
+   />
+   <link
+     rel="stylesheet"
+     type="text/css"
+     href="{{ url_for('static',filename='css/home.css') }}"
+   />
+   <link
+     rel="stylesheet"
+     type="text/css"
+     href="{{ url_for('static',filename='css/home.css') }}"
+   />
+   <link
+     rel="stylesheet"
+     href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+   />
+
+   <script
+     src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+     charset="utf-8"
+   ></script>
+
+   <!-- <script src="{{ url_for('static',filename='js/main.js') }}"></script> -->
+ </head>
+ <body>
+   <div class="header">
+   <ul class="menu">
+       <a href="/">Home</a>
+       <a href="/prediction">Prediction</a>
+       <a href="/visualization">Visualizations</a>
+       <a href="/about">About</a>
+       <label for="chk" class="hide-menu-btn">
+         <i class="fas fa-times"></i>
+       </label>
+     </ul>
+
+     <h2 class="logo">Harar Jugol Team</h2>
+     <input type="checkbox" id="chk" />
+     <label for="chk" class="show-menu-btn">
+       <i class="fas fa-ellipsis-h"></i>
+     </label>
+
+
+   </div>
+
+   <div class="content">
+     <div class="container">
+       <div class="feature-image"></div>
+       <div class="article-section">
+         <div class="article">
+           <div class="article-content">
+             <div class="article-img">
+               <!-- <img
+                 src="{{url_for('static', filename='images/news-img.jpg')}}"
+                 alt="news-image"
+               /> -->
+             </div>
+             <div class="article-title">
+               Models and Prediction
+             </div>
+             <div class="article-para">
+               <h2>Random Forest Regression</h2>
+               <br>
+               <p>
+                    <h3>Feature Selection</h3>
+                    Store,DayOfWeek,Promo,
+       StateHoliday, SchoolHoliday, Year, Month, DayOfMonth,
+       StoreType, Assortment,
+       CompetitionDistance, Promo2,
+       CompetitionOpen, PromoOpen
+               </p>
+               <p>
+                    <h3>Loss Function</h3>
+                    In this project we used RMSE as our loss function.
+                     The  root-mean-square error (RMSE) is a frequently used measure of the differences between values 
+                     (sample or population values) predicted by a model or an estimator and the values observed.
+                    <br>
+                    Based on this our Random Forest model has 988.7569125265082 RMSE
+               </p>
+               <p>
+               <h3>Feature importance in Random Forest Regression</h3>
+               In order to understand better what happened when we ran our randomforest regressor, here is a chart that represents, the importance
+                and role that each variable that i decided to include played in this learning process:
+                 <img
+                  src="{{url_for('static', filename='plot/feature_importance.png')}}"
+                  alt="feature importance"
+                /> 
+               </p>
+               <h2>Prophet</h2>
+               <br>
+               <p>
+               Prophet is a procedure for forecasting time series data based on
+                an additive model where non-linear trends are fit with yearly, weekly, and daily seasonality.
+               </p>
+               <p>
+               <p>
+                <h3>Feature Selection</h3>
+                Date,StateHoliday, SchoolHoliday, Sales
+               </p>
+               <p>
+               <h3>Forecast for feature weeks</h3>
+               <img
+                  src="{{url_for('static', filename='plot/prophet_forecast.PNG')}}"
+                  alt="prophet forecast"
+                /> 
+               </p>
+               <p>
+               <h3>Trend, yearly seasonality and weekly seasonality of the time series.</h3>
+               <img
+                  src="{{url_for('static', filename='plot/phrophet_trend.png')}}"
+                  alt="prophet forecast"
+                /> 
+               </p>
+               <p>
+               <h3>Real truth data and the forecasted data</h3>
+               <img
+                  src="{{url_for('static', filename='plot/prophet_real_and_forecast.PNG')}}"
+                  alt="prophet forecast"
+                /> 
+               </p>
+               
+               <h2>XGBoost</h2>
+               <br>
+               <p>XGBoost is an optimized distributed gradient boosting library designed to be
+                highly efficient, flexible and portable. It implements machine learning
+                 algorithms under the Gradient Boosting framework. XGBoost provides a parallel
+                  tree boosting (also known as GBDT, GBM) that solve many data science problems
+                   in a fast and accurate way.</p>
+                <p>
+                    <h3>Feature Selection</h3>
+                    Store,DayOfWeek,Promo,
+       StateHoliday, SchoolHoliday, Year, Month, DayOfMonth,
+       StoreType, Assortment,
+       CompetitionDistance, Promo2,
+       CompetitionOpen, PromoOpen
+               </p>
+               <p>
+                    <h3>Loss Function</h3>
+                    In this project we used RMSE as our loss function.
+                     The  root-mean-square error (RMSE) is a frequently used measure of the differences between values 
+                     (sample or population values) predicted by a model or an estimator and the values observed.
+                    <br>
+                    Based on this our Random Forest model has 875.1776080302733 RMSE
+               </p>
+               <p>
+               <h3>Feature importance in XGBoost</h3>
+                 <img
+                  src="{{url_for('static', filename='plot/xgb_importance.PNG')}}"
+                  alt="xgb importance"
+                /> 
+               </p>
+               <p>
+
+             </div>
+           </div>
+
+         </div>
+       </div>
+     </div>
+   </div>
+
+ </body>
+</html>
