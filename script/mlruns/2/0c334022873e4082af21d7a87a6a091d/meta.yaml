@@ -1,0 +1,15 @@
+artifact_uri: file:///home/natty/Project/10%20Acadamy%20Challenges/Pharmaceutical-Sales-prediction-across-multiple-stores/script/mlruns/2/0c334022873e4082af21d7a87a6a091d/artifacts
+end_time: 1627713768787
+entry_point_name: ''
+experiment_id: '2'
+lifecycle_stage: active
+name: ''
+run_id: 0c334022873e4082af21d7a87a6a091d
+run_uuid: 0c334022873e4082af21d7a87a6a091d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1627713768759
+status: 3
+tags: []
+user_id: natty

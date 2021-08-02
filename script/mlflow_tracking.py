@@ -12,14 +12,14 @@ from statsmodels.stats.proportion import proportions_ztest, proportion_confint
 
 path = 'data/store.csv'
 repo = '/home/natty/Project/10 Acadamy Challenges/Pharmaceutical-Sales-prediction-across-multiple-stores'
-version = 'v2'
+version = 'v4'
 data_url = dvc.api.get_url(
     path=path,
     repo=repo,
     rev=version
 )
 
-mlflow.set_experiment('demo')
+mlflow.set_experiment('Natnael Teshome')
 
 df = pd.read_csv(data_url)
 
